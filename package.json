@@ -1,0 +1,51 @@
+{
+  "name": "budgeting-poc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "bundlewatch": "bundlewatch",
+    "bundlemon": "bundlemon"
+  },
+  "dependencies": {
+    "next": "13.4.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "bundlemon": "^2.0.1",
+    "bundlewatch": "^0.3.3",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.2"
+  },
+  "bundlewatch": {
+    "files": [
+      {
+        "path": ".next/**/*.js",
+        "maxSize": "5kB"
+      },
+      {
+        "path": ".next/**/*.html",
+        "maxSize": "2kb"
+      },
+      {
+        "path": ".next/**/*.css",
+        "maxSize": "200b"
+      }
+    ]
+  },
+  "bundlemon": {
+    "baseDir": "./.next",
+    "files": [
+      {
+        "path": "*.<hash>.chunk.js"
+      },
+      {
+        "path": "*.<hash>.js"
+      }
+    ]
+  }
+}
